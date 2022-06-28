@@ -18,31 +18,39 @@ public class PlayerRotate : MonoBehaviour
 
     public void RotateForward()
     {
-        rotateEulerAngles += new Vector3(rotateAmount, 0, 0);
-        cube.transform.localEulerAngles = rotateEulerAngles;
+        cube.transform.Rotate(rotateAmount, 0, 0, Space.World);
+
+        //rotateEulerAngles += new Vector3(rotateAmount, 0, 0);
+        //cube.transform.localEulerAngles = rotateEulerAngles;
     }
 
 
     public void RotateBackward()
     {
+        cube.transform.Rotate(-rotateAmount, 0, 0, Space.World);
 
-        rotateEulerAngles += new Vector3(-rotateAmount, 0, 0);
-        cube.transform.localEulerAngles = rotateEulerAngles;
+
+        //rotateEulerAngles += new Vector3(-rotateAmount, 0, 0);
+        //cube.transform.localEulerAngles = rotateEulerAngles;
 
     }
 
     public void RotateLeft()
     {
+        cube.transform.Rotate(0, 0, rotateAmount, Space.World);
 
-        rotateEulerAngles += new Vector3(0, 0, rotateAmount);
-        cube.transform.localEulerAngles = rotateEulerAngles;
+
+        //rotateEulerAngles += new Vector3(0, 0, rotateAmount);
+        //cube.transform.localEulerAngles = rotateEulerAngles;
     }
 
     public void RotateRight()
     {
+        cube.transform.Rotate(0,0,-rotateAmount, Space.World);
 
-        rotateEulerAngles += new Vector3(0, 0, -rotateAmount);
-        cube.transform.localEulerAngles = rotateEulerAngles;
+
+        //rotateEulerAngles += new Vector3(0, 0, -rotateAmount);
+        //cube.transform.localEulerAngles = rotateEulerAngles;
     }
 
     private void OnDrawGizmos()
